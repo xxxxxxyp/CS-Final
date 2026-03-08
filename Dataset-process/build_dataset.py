@@ -53,6 +53,7 @@ def process_dataset(base_dir, output_dir, labels_csv_path):
             )
 
         for file_index, mat_file in enumerate(mat_files):
+            # 第 1,2 / 3,4 / 5,6 个文件分别对应衣服 1 / 2 / 3；奇数位文件对应姿态 0，偶数位文件对应姿态 1。
             clothing_id = (file_index // 2) + 1
             pose_id = file_index % 2
 
