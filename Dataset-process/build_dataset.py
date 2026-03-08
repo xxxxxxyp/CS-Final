@@ -86,10 +86,18 @@ def process_dataset(base_dir, output_dir, labels_csv_path):
     print(f'标签文件已保存至: {labels_csv_path}')
 
 
+def get_default_base_dir(project_root):
+    """优先使用项目根目录下的 Raw_Data，兼容旧版 Dataset-process/Raw_Data。"""
+    root_data_dir = project_root / 'Raw_Data'
+    if root_data_dir.is_dir():
+        return root_data_dir
+    return project_root / 'Dataset-process' / 'Raw_Data'
+
+
 if __name__ == '__main__':
     project_root = Path(__file__).resolve().parent.parent
     process_dataset(
-        base_dir=project_root / 'Raw_Data',
+        base_dir=get_default_base_dir(project_root),
         output_dir=project_root / 'Processed_Data',
         labels_csv_path=project_root / 'dataset_labels.csv',
     )
