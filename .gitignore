@@ -21,6 +21,7 @@ wheels/
 *.egg
 MANIFEST
 *.npz
+*.csv
 
 # PyTorch
 *.pth
@@ -30,4 +31,7 @@ MANIFEST
 # Data
 Dataset-process/Raw_Data/
 *.mat
+Processed_Data/
+*.npy
+
 
