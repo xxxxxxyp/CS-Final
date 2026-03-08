@@ -133,21 +133,21 @@ def main() -> None:
 	criterion = nn.CrossEntropyLoss()
 	optimizer = AdamW(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
 
-	best_val_acc = -1.0
+	best_test_acc = -1.0
 
 	for epoch in range(1, EPOCHS + 1):
 		train_loss = train_one_epoch(model, train_loader, criterion, optimizer, device)
-		val_loss, val_acc = evaluate(model, test_loader, criterion, device)
+		test_loss, test_acc = evaluate(model, test_loader, criterion, device)
 
 		print(
 			f"Epoch [{epoch}/{EPOCHS}] | "
 			f"Train Loss: {train_loss:.3f} | "
-			f"Val Loss: {val_loss:.3f} | "
-			f"Val Acc: {val_acc:.2f}%"
+			f"Test Loss: {test_loss:.3f} | "
+			f"Test Acc: {test_acc:.2f}%"
 		)
 
-		if val_acc > best_val_acc:
-			best_val_acc = val_acc
+		if test_acc > best_test_acc:
+			best_test_acc = test_acc
 			torch.save(model.state_dict(), BEST_MODEL_PATH)
 			print("--> Best model saved!")
 
