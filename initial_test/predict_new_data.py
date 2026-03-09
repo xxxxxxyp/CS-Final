@@ -9,8 +9,8 @@ from model import LightweightCIRCNN
 CURRENT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = CURRENT_DIR.parent
 
-MODEL_PATH = CURRENT_DIR / 'best_model.pth'
-DATA_DIR = PROJECT_ROOT / 'processed_test_data'
+MODEL_PATH = CURRENT_DIR / 'best_model_diff.pth'
+DATA_DIR = PROJECT_ROOT / 'Processed_New_Diff_Data'
 
 NUM_CLASSES = 3
 EXPECTED_SHAPE = (960, 150)

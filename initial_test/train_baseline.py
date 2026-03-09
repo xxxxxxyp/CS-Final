@@ -12,9 +12,9 @@ from model import LightweightCIRCNN
 CURRENT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = CURRENT_DIR.parent
 
-CSV_PATH = PROJECT_ROOT / "dataset_labels.csv"
-DATA_DIR = PROJECT_ROOT / "Processed_Data"
-BEST_MODEL_PATH = CURRENT_DIR / "best_model.pth"
+CSV_PATH = PROJECT_ROOT / "dataset_labels_diff.csv"
+DATA_DIR = PROJECT_ROOT / "Processed_Diff_Data"
+BEST_MODEL_PATH = CURRENT_DIR / "best_model_diff.pth"
 
 EPOCHS = 50
 BATCH_SIZE = 16
